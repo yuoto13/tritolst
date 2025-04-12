@@ -7,8 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/trash.css">
-
-
 </head>
 <body>
   <header>
@@ -16,7 +14,9 @@
     <nav>
       <a href="index.html">Главная</a>
       <a href="menu.html">Меню</a>
-      <a href="#">Корзина</a>
+      <a href="javascript:void(0)" class="cart-trigger">
+        <span class="cart-icon">Корзина <span class="cart-count">0</span></span>
+      </a>
       <a href="#">Профиль</a>
     </nav>
   </header>
@@ -54,31 +54,31 @@
     <div class="container">
       <h2>Популярные блюда</h2>
       <div class="popular-slider">
-        <div class="popular-item">
-          <img src="images/peperoni.avif" alt="Пепперони" class="popular-image">
+        <div class="popular-item product-card" data-id="1">
+          <img src="images/pizza/peperoni.avif" alt="Пепперони" class="popular-image">
           <h3>Пепперони</h3>
           <p>Классическая пицца с томатным соусом, сыром и пепперони</p>
           <div class="popular-footer">
             <span class="popular-price">599 ₽</span>
-            <button class="btn" onclick="addToCart(1, 1)">В корзину</button>
+            <button class="btn add-to-cart" onclick="addToCart(1, 1)">В корзину</button>
           </div>
         </div>
-        <div class="popular-item">
-          <img src="/api/placeholder/400/300" alt="Филадельфия" class="popular-image">
+        <div class="popular-item product-card" data-id="5">
+          <img src="/images/roll/phila.webp" alt="Филадельфия" class="popular-image">
           <h3>Филадельфия</h3>
           <p>Классический ролл с лососем и сыром</p>
           <div class="popular-footer">
             <span class="popular-price">449 ₽</span>
-            <button class="btn" onclick="addToCart(5, 1)">В корзину</button>
+            <button class="btn add-to-cart" onclick="addToCart(5, 1)">В корзину</button>
           </div>
         </div>
-        <div class="popular-item">
-          <img src="/api/placeholder/400/300" alt="Семейный сет" class="popular-image">
+        <div class="popular-item product-card" data-id="8">
+          <img src="/images/set/set1.webp" alt="Семейный сет" class="popular-image">
           <h3>Семейный сет</h3>
           <p>Большой набор пиццы и роллов для всей семьи</p>
           <div class="popular-footer">
             <span class="popular-price">1699 ₽</span>
-            <button class="btn" onclick="addToCart(8, 1)">В корзину</button>
+            <button class="btn add-to-cart" onclick="addToCart(8, 1)">В корзину</button>
           </div>
         </div>
       </div>
@@ -116,6 +116,26 @@
       <button class="btn" onclick="location.href='menu.html'">Перейти в меню</button>
     </div>
   </section>
+  
+  <!-- Элементы корзины будут добавлены через JS -->
+  <div class="cart-overlay"></div>
+  <div class="cart-container">
+    <div class="cart-header">
+      <h2>Корзина</h2>
+      <button class="cart-close">&times;</button>
+    </div>
+    <div class="cart-items">
+      <div class="cart-empty">Корзина пуста</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Итого:</span>
+        <span class="cart-total-value">0 ₽</span>
+      </div>
+      <button class="cart-checkout">Оформить заказ</button>
+    </div>
+  </div>
+  
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -144,10 +164,13 @@
       </div>
     </div>
   </footer>
+  
   <div class="modal">
     <div class="modal-content">
     </div>
   </div>
+  
   <script src="js/script.js"></script>
+  <script src="js/trash.js"></script>
 </body>
 </html>

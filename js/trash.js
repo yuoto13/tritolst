@@ -1,4 +1,3 @@
-// Объект для хранения данных о продуктах
 const products = {
     1: { id: 1, name: 'Пепперони', price: 599, image: 'images/peperoni.avif', description: 'Классическая пицца с томатным соусом, сыром и пепперони' },
     2: { id: 2, name: 'Четыре сыра', price: 649, image: '/api/placeholder/400/300', description: 'Пицца с сырами: моцарелла, горгонзола, пармезан и рикотта' },
@@ -10,8 +9,7 @@ const products = {
     8: { id: 8, name: 'Семейный сет', price: 1699, image: '/api/placeholder/400/300', description: 'Большой набор пиццы и роллов для всей семьи' },
     9: { id: 9, name: 'Суши-сет', price: 1299, image: '/api/placeholder/400/300', description: 'Набор из популярных роллов и суши' }
   };
-  
-  // Создаем класс Cart для работы с корзиной
+
   class Cart {
     constructor() {
       this.items = {};
