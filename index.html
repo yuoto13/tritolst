@@ -7,7 +7,7 @@
   <!-- Подключение шрифтов -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   <!-- Подключение стилей -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Шапка сайта -->
@@ -46,4 +46,119 @@
         <div class="feature">
           <div class="feature-icon">🔥</div>
           <h3>Горячая еда</h3>
-          <p>Специальные термосум
+          <p>Специальные термосумки сохраняют температуру блюд до момента доставки</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Популярные блюда -->
+  <section class="popular">
+    <div class="container">
+      <h2>Популярные блюда</h2>
+      <div class="popular-slider">
+        <div class="popular-item">
+          <img src="/api/placeholder/400/300" alt="Пепперони" class="popular-image">
+          <h3>Пепперони</h3>
+          <p>Классическая пицца с томатным соусом, сыром и пепперони</p>
+          <div class="popular-footer">
+            <span class="popular-price">599 ₽</span>
+            <button class="btn" onclick="addToCart(1, 1)">В корзину</button>
+          </div>
+        </div>
+        <div class="popular-item">
+          <img src="/api/placeholder/400/300" alt="Филадельфия" class="popular-image">
+          <h3>Филадельфия</h3>
+          <p>Классический ролл с лососем и сыром</p>
+          <div class="popular-footer">
+            <span class="popular-price">449 ₽</span>
+            <button class="btn" onclick="addToCart(5, 1)">В корзину</button>
+          </div>
+        </div>
+        <div class="popular-item">
+          <img src="/api/placeholder/400/300" alt="Семейный сет" class="popular-image">
+          <h3>Семейный сет</h3>
+          <p>Большой набор пиццы и роллов для всей семьи</p>
+          <div class="popular-footer">
+            <span class="popular-price">1699 ₽</span>
+            <button class="btn" onclick="addToCart(8, 1)">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Отзывы клиентов -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Отзывы наших клиентов</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">Заказывала пиццу "4 сыра" и роллы "Калифорния". Всё привезли горячим, очень вкусно и быстро! Буду заказывать ещё.</p>
+          <p class="testimonial-author">Анна К.</p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">Порадовал семейный набор. Отличное соотношение цены и качества. Очень сытно, хватило на всю семью!</p>
+          <p class="testimonial-author">Дмитрий В.</p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-rating">★★★★☆</div>
+          <p class="testimonial-text">Вкусная пицца, особенно понравилась "Пепперони". Привезли быстро, но один из роллов был немного помят. В целом доволен.</p>
+          <p class="testimonial-author">Максим С.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Призыв к действию -->
+  <section class="cta">
+    <div class="container">
+      <h2>Проголодались? Заказывайте прямо сейчас!</h2>
+      <p>Используйте промокод WELCOME для скидки 10% на первый заказ</p>
+      <button class="btn" onclick="location.href='menu.html'">Перейти в меню</button>
+    </div>
+  </section>
+  
+  <!-- Футер сайта -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="index.html" class="logo">ТриТолстяка</a>
+          <p>Доставка вкусной еды в любую точку города</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-contacts">
+          <h4>Контакты</h4>
+          <p>Телефон: +7 (999) 123-45-67</p>
+          <p>Email: info@tritolstyaka.ru</p>
+          <p>Адрес: г. Москва, ул. Примерная, д. 123</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 ТриТолстяка. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Модальное окно с деталями товара -->
+  <div class="modal">
+    <div class="modal-content">
+      <!-- Содержимое будет добавлено динамически -->
+    </div>
+  </div>
+  
+  <!-- Подключение скриптов -->
+  <script src="js/script.js"></script>
+</body>
+</html>
