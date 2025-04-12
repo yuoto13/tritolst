@@ -3,110 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FoodExpress — Пример</title>
+  <title>ТриТолстяка — Доставка еды</title>
   <!-- Подключение шрифтов -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-  <style>
-    /* Базовые стили */
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #111;
-      color: #f1f1f1;
-    }
-    
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #222;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    }
-    header .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 2rem;
-      color: #e63946;
-      text-decoration: none;
-    }
-    header nav a {
-      margin-left: 1rem;
-      color: #f1f1f1;
-      text-decoration: none;
-      transition: color 0.3s;
-      position: relative;
-    }
-    header nav a:hover {
-      color: #e63946;
-    }
-    header nav a:after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      background: #e63946;
-      left: 0;
-      bottom: -4px;
-      transition: width 0.3s;
-    }
-    header nav a:hover:after {
-      width: 100%;
-    }
-    
-    /* Баннер (главная секция) */
-    .banner {
-      text-align: center;
-      padding: 4rem 1rem;
-      background: url('/home/vlaga/tritolst/banner.png') center/cover no-repeat;
-      animation: fadeIn 1s ease-out;
-    }
-    .banner h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 3rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      margin: 0 0 1rem 0;
-    }
-    .banner p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .banner button {
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      background-color: #e63946;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.3s, background-color 0.3s;
-    }
-    .banner button:hover {
-      transform: scale(1.05);
-      background-color: #d62828;
-    }
-    
-    /* Анимация появления */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    /* Футер */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #222;
-      font-size: 0.9rem;
-    }
-  </style>
+  <!-- Подключение стилей -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <!-- Шапка сайта -->
   <header>
-    <a href="#" class="logo">ТриТолстяка</a>
+    <a href="index.html" class="logo">ТриТолстяка</a>
     <nav>
-      <a href="#">Главная</a>
-      <a href="#">Меню</a>
+      <a href="index.html">Главная</a>
+      <a href="menu.html">Меню</a>
       <a href="#">Корзина</a>
       <a href="#">Профиль</a>
     </nav>
@@ -116,12 +25,25 @@
   <section class="banner">
     <h1>Добро пожаловать в ТриТолстяка!</h1>
     <p>Заказывайте пиццы, роллы и сеты с доставкой на дом</p>
-    <button>Заказать сейчас</button>
+    <button onclick="location.href='menu.html'">Заказать сейчас</button>
   </section>
   
-  <!-- Футер сайта -->
-  <footer>
-    <p>© 2025 ТриТолстяка. Все права защищены.</p>
-  </footer>
-</body>
-</html>
+  <!-- Блок с преимуществами -->
+  <section class="features">
+    <div class="container">
+      <h2>Почему выбирают нас</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">🍕</div>
+          <h3>Свежие ингредиенты</h3>
+          <p>Мы используем только свежие и качественные продукты для приготовления наших блюд</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🚚</div>
+          <h3>Быстрая доставка</h3>
+          <p>Доставляем заказы в течение 60 минут или вернем вам деньги</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔥</div>
+          <h3>Горячая еда</h3>
+          <p>Специальные термосум

@@ -1,0 +1,685 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111;
+    color: #f1f1f1;
+  }
+  
+  /* Контейнер */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #222;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  header .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #e63946;
+    text-decoration: none;
+  }
+  
+  header nav a {
+    margin-left: 1rem;
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+  
+  header nav a:hover {
+    color: #e63946;
+  }
+  
+  header nav a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #e63946;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s;
+  }
+  
+  header nav a:hover:after {
+    width: 100%;
+  }
+  
+  /* Баннер (главная секция) */
+  .banner {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: url('../images/banner.jpg') center/cover no-repeat;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .banner h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 0 1rem 0;
+  }
+  
+  .banner p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .banner button, .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background-color: #e63946;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .banner button:hover, .btn:hover {
+    transform: scale(1.05);
+    background-color: #d62828;
+  }
+  
+  /* Анимация появления */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Категории блюд */
+  .categories {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .category-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .category-btn {
+    margin: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .category-btn.active, .category-btn:hover {
+    background-color: #e63946;
+  }
+  
+  /* Сетка товаров */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem 2rem;
+  }
+  
+  /* Карточка товара */
+  .product-card {
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    cursor: pointer;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .product-info {
+    padding: 1rem;
+  }
+  
+  .product-title {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #f1f1f1;
+  }
+  
+  .product-description {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    height: 40px;
+    overflow: hidden;
+  }
+  
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    color: #e63946;
+  }
+  
+  .add-to-cart {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #d62828;
+  }
+  
+  /* Модальное окно с деталями товара */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    animation: fadeIn 0.3s;
+  }
+  
+  .modal-content {
+    background-color: #222;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    animation: slideIn 0.3s;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .modal-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal-close:hover {
+    color: #e63946;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .modal-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .modal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .modal-details {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 20px;
+  }
+  
+  .modal-title {
+    margin-top: 0;
+    color: #f1f1f1;
+  }
+  
+  .modal-description {
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .modal-ingredients {
+    margin-bottom: 20px;
+  }
+  
+  .modal-ingredients h4 {
+    margin-bottom: 5px;
+    color: #f1f1f1;
+  }
+  
+  .ingredients-list {
+    list-style-type: none;
+    padding: 0;
+    color: #ccc;
+  }
+  
+  .ingredients-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #333;
+  }
+  
+  .modal-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e63946;
+    margin-bottom: 20px;
+  }
+  
+  .modal-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .qty-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .qty-value {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 0;
+  }
+  
+  .add-btn {
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-btn:hover {
+    background-color: #d62828;
+  }
+  
+  /* Футер */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #222;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+  
+  /* Секция с заголовком */
+  .page-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #1a1a1a;
+  }
+  
+  .page-header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    color: #e63946;
+  }
+  
+  .page-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #ccc;
+  }
+  
+  /* Секция с преимуществами */
+  .features {
+    padding: 4rem 1rem;
+    background-color: #1a1a1a;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #e63946;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .feature {
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .feature:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature h3 {
+    margin: 0 0 1rem 0;
+    color: #f1f1f1;
+  }
+  
+  .feature p {
+    color: #ccc;
+    margin: 0;
+  }
+  
+  /* Секция с популярными товарами */
+  .popular {
+    padding: 4rem 1rem;
+    background-color: #111;
+    text-align: center;
+  }
+  
+  .popular h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #e63946;
+  }
+  
+  .popular-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .popular-item {
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .popular-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .popular-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .popular-item h3 {
+    padding: 1rem 1rem 0.5rem;
+    margin: 0;
+    color: #f1f1f1;
+  }
+  
+  .popular-item p {
+    padding: 0 1rem;
+    margin: 0 0 1rem 0;
+    color: #ccc;
+    min-height: 40px;
+  }
+  
+  .popular-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #333;
+  }
+  
+  .popular-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #e63946;
+  }
+  
+  /* Секция с отзывами */
+  .testimonials {
+    padding: 4rem 1rem;
+    background-color: #1a1a1a;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #e63946;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .testimonial {
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+  }
+  
+  .testimonial-rating {
+    color: #e63946;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-text {
+    color: #f1f1f1;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+  }
+  
+  .testimonial-author {
+    color: #ccc;
+  }
+  
+  /* Секция с призывом к действию */
+  .cta {
+    padding: 4rem 1rem;
+    background-color: #e63946;
+    text-align: center;
+    color: white;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+  }
+  
+  .cta p {
+    font-size: 1.2rem;
+    margin: 0 0 2rem 0;
+    opacity: 0.9;
+  }
+  
+  .cta .btn {
+    background-color: white;
+    color: #e63946;
+    font-weight: bold;
+  }
+  
+  .cta .btn:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Стили футера */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid #333;
+  }
+  
+  .footer-info .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: #e63946;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  
+  .footer-info p {
+    color: #ccc;
+    margin: 0.5rem 0;
+  }
+  
+  .footer-nav h4, .footer-contacts h4 {
+    color: #f1f1f1;
+    margin: 0 0 1rem 0;
+  }
+  
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-nav ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-nav ul li a:hover {
+    color: #e63946;
+  }
+  
+  .footer-contacts p {
+    color: #ccc;
+    margin: 0.5rem 0;
+  }
+  
+  .footer-bottom {
+    padding: 1.5rem 0;
+    color: #999;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      padding: 1rem;
+    }
+    
+    header nav {
+      margin-top: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    header nav a {
+      margin: 0;
+    }
+    
+    .banner h1 {
+      font-size: 2rem;
+    }
+    
+    .banner p {
+      font-size: 1.2rem;
+    }
+    
+    .modal-content {
+      width: 95%;
+      margin: 5% auto;
+    }
+    
+    .modal-body {
+      flex-direction: column;
+    }
+    
+    .modal-details {
+      padding: 20px 0 0 0;
+    }
+  }
